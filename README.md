@@ -54,8 +54,7 @@ Celsius wiki
 -----------
 
 ## REST API
-#### Version
-    1
+#### Version `1`
 #### Base URL 
     https://<host_url>/api/v1
 
