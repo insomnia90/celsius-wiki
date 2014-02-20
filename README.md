@@ -12,7 +12,7 @@ Celsius wiki
 
 ### Account
 
-##### Create new account
+#### Create new account
     /auth/account
 
 ##### Method `POST`
@@ -20,14 +20,47 @@ Celsius wiki
 
 ##### Request JSON object
 ```
-    {
-        "email": "STRING",
-        "password": "STRING"
-    }
+{
+    "email": "STRING",
+    "password": "STRING"
+}
 ```
 
 ##### Response JSON object
   -if OK `{apikey: STRING}`
+  
+  -if error `500`
+
+  -----
+#### Reset password
+    /auth/account
+##### Method `PATCH`
+##### Content-Type `application/json`
+
+##### Request JSON object
+```
+{"email": STRING}
+```
+##### Response JSON object
+  -if OK `200`
+  
+  -if error `500`
+
+
+#### Change password
+    /auth/account
+##### Method `PUT`
+##### Content-Type `application/json`
+
+##### Request JSON object
+```
+{
+    "email": STRING,
+    "password": STRING
+}
+```
+##### Response JSON object
+  -if OK `200`
   
   -if error `500`
 
@@ -40,16 +73,15 @@ Celsius wiki
   
 ##### Request JSON object
 ```
-    {
-        "email": "STRING",
-        "password": "STRING"
-    }
+{
+    "email": "STRING",
+    "password": "STRING"
+}
 ```
 ##### Response JSON object
   -if OK `{apikey: STRING}`
   
   -if error `401`
-
 
 -----------
 
@@ -75,16 +107,16 @@ Permission: apikey
 
 ##### Request JSON object
 ```
-    { "data": [
-                {
-                    "first": STRING,
-                    "last": STRING,
-                    "phone": STRING,
-                    "email":  STRING
-                },
-                ...
-            ]
-    }
+{ "data": [
+            {
+                "first": STRING,
+                "last": STRING,
+                "phone": STRING,
+                "email":  STRING
+            },
+            ...
+        ]
+}
 ```
 ##### Response JSON object
   -if OK `200`
@@ -99,17 +131,17 @@ Permission: apikey
   
 ##### Response JSON object
 ```
-    [   
-        {
-            "phone": STRING,
-            "email":  STRING,
-            "name": {
-                "first": STRING,
-                "last": STRING
-            }
-        },
-        ...
-    ]
+[   
+    {
+        "phone": STRING,
+        "email":  STRING,
+        "name": {
+            "first": STRING,
+            "last": STRING
+        }
+    },
+    ...
+]
 ```
   -if error: `JSON STRING with the error message`
   
@@ -122,6 +154,7 @@ Permission: apikey
 ## References:
 - [Internet Media Type](http://en.wikipedia.org/wiki/Internet_media_type)
 - [HTTP](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) 
+
 
 
 
