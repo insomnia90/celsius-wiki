@@ -111,7 +111,12 @@ Permission: apikey
             {
                 "first": STRING,
                 "last": STRING,
-                "phone": STRING,
+                "phone": {
+                  "mobile": STRING,
+                  "iphone": STRING,
+                  "work": STRING,
+                  "home": STRING
+                },
                 "email":  STRING
             },
             ...
@@ -133,12 +138,15 @@ Permission: apikey
 ```
 [   
     {
-        "phone": STRING,
+        "first": STRING,
+        "last": STRING,
+        "phone": {
+          "mobile": STRING,
+          "iphone": STRING,
+          "work": STRING,
+          "home": STRING
+        },
         "email":  STRING,
-        "name": {
-            "first": STRING,
-            "last": STRING
-        }
     },
     ...
 ]
