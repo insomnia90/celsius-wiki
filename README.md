@@ -112,6 +112,7 @@ Permission: apikey
                 "first": STRING,
                 "last": STRING,
                 "phone": {
+                  "main": STRING,
                   "mobile": STRING,
                   "iphone": STRING,
                   "work": STRING,
@@ -141,6 +142,7 @@ Permission: apikey
         "first": STRING,
         "last": STRING,
         "phone": {
+          "main": STRING,
           "mobile": STRING,
           "iphone": STRING,
           "work": STRING,
@@ -162,7 +164,6 @@ Permission: apikey
 ## References:
 - [Internet Media Type](http://en.wikipedia.org/wiki/Internet_media_type)
 - [HTTP](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) 
-
 
 
 
