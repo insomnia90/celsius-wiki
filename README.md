@@ -51,6 +51,9 @@ Celsius wiki
     /auth/account
 ##### Method `PUT`
 ##### Content-Type `application/json`
+##### Permission:
+        requires apikey authentication
+
 
 ##### Request JSON object
 ```
