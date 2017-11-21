@@ -1,144 +1,94 @@
-Celsius wiki
-============
-------------
-
-### Base URL 
-    https://<host_url>/
+# Celsius app - server
 
 
-------------
+### Base URL `https://<host_url>/`
 
-## Auth
 
-### Account
-
-#### Create new account
-    /auth/account
-
+### Create new user
 ##### Method `POST`
 ##### Content-Type `application/json`
-
-##### Request JSON object
+##### Request body
 ```
 {
     "email": "STRING",
     "password": "STRING"
 }
 ```
+##### Response body
+> status `200`
 
-##### Response JSON object
-  -if OK `{apikey: STRING}`
-  
-  -if error `500`
-
-  -----
-#### Reset password
-    /auth/account
-##### Method `PATCH`
-##### Content-Type `application/json`
-
-##### Request JSON object
-```
-{"email": STRING}
-```
-##### Response JSON object
-  -if OK `200`
-  
-  -if error `500`
+> status `500` body `{message: <error>}`
 
 
-#### Change password
-    /auth/account
-##### Method `PUT`
-##### Content-Type `application/json`
-##### Permission:
-        requires apikey authentication
-
-
-##### Request JSON object
-```
-{
-    "email": STRING,
-    "password": STRING
-}
-```
-##### Response JSON object
-  -if OK `200`
-  
-  -if error `500`
-
-  -----
-### Login
-    /auth/login
-
+### Get auth token
 ##### Method `POST`
 ##### Content-Type `application/json`
-  
-##### Request JSON object
+##### Request body
 ```
 {
     "email": "STRING",
     "password": "STRING"
 }
 ```
-##### Response JSON object
-  -if OK `{apikey: STRING}`
-  
-  -if error `401`
+##### Response body
+> status `200` body
+```
+{
+    success: true,
+    exp: '72h', // expiration date
+    token: token,
+}
+```
+
+> status `500` || `401` body `{message: <error>}`
 
 -----------
 
 ## REST API
-#### Version `1`
-#### Base URL 
-    https://<host_url>/api/v1
 
 #### Permission
-All requests requires apikey authentication
-`?apikey=9656439238839`
+Add in the HTTP Header
+##### X-Access-Token `<token>`
 
-## Resources
+-----------
 
 ### Contact
-Permission: apikey
 
-##### Create a list of contacts
-    /contact
-    
+#### Create a list of contacts
+##### URL: `/contacts`
 ##### Method `POST`
 ##### Content-Type `application/json`
 
-##### Request JSON object
+##### Request body: array
 ```
-{ "data": [
-            {
-                "first": STRING,
-                "last": STRING,
-                "phone": {
-                  "main": STRING,
-                  "mobile": STRING,
-                  "iphone": STRING,
-                  "work": STRING,
-                  "home": STRING
-                },
-                "email":  STRING
-            },
-            ...
-        ]
-}
+[
+    {
+        "first": STRING,
+        "last": STRING,
+        "phone": {
+            "main": STRING,
+            "mobile": STRING,
+            "iphone": STRING,
+            "work": STRING,
+            "home": STRING
+        },
+        "email":  STRING
+    },
+    ...
+]
 ```
-##### Response JSON object
-  -if OK `200`
-  
-  -if error: `JSON STRING with the error message`
+##### Response body
+> status `200`
+
+> status `500` body `{message: <error>}`
 
 
 #### Get a list of contacts
-    /contact
-    
-#### Method `GET`
-  
-##### Response JSON object
+##### URL: `/contacts`
+##### Method `GET`
+##### Content-Type `application/json`
+##### Response body
+> status `200`
 ```
 [   
     {
@@ -156,21 +106,4 @@ Permission: apikey
     ...
 ]
 ```
-  -if error: `JSON STRING with the error message`
-  
-------------
-
-### Photo [not finished]
-
-
-------------
-## References:
-- [Internet Media Type](http://en.wikipedia.org/wiki/Internet_media_type)
-- [HTTP](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) 
-
-
-
-
-
-
-
+> status `500` body `{message: <error>}`
