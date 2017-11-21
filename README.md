@@ -5,6 +5,7 @@
 
 
 ### Create new user
+##### URL: `/auth/account`
 ##### Method `POST`
 ##### Content-Type `application/json`
 ##### Request body
@@ -21,6 +22,7 @@
 
 
 ### Get auth token
+##### URL: `/auth/token`
 ##### Method `POST`
 ##### Content-Type `application/json`
 ##### Request body
