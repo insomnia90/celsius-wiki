@@ -1,11 +1,11 @@
 # Celsius app - server
 
 
-### Base URL `https://<host_url>/`
+### Base URL `?`
 
 
 ### Create new user
-##### URL: `/auth/account`
+##### URL: `/users`
 ##### Method `POST`
 ##### Content-Type `application/json`
 ##### Request body
