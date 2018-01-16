@@ -1,7 +1,7 @@
 # Celsius app - server
 
 
-### Base URL `?`
+### Base URL `<base_url>`
 
 
 ### Create new user
@@ -21,7 +21,7 @@
 > status `500` body `{message: <error>}`
 
 
-### Get auth token
+### Get auth token (Login)
 ##### URL: `/auth/token`
 ##### Method `POST`
 ##### Content-Type `application/json`
@@ -43,6 +43,40 @@
 ```
 
 > status `500` || `401` body `{message: <error>}`
+
+### Reset password
+##### URL: `/auth/account`
+##### Method `PATCH`
+##### Content-Type `application/json`
+##### ! No Access-Token required
+##### Request body
+```
+{
+    "email": <email>
+}
+```
+##### Response body
+> status `200`
+
+> status `500` body `{message: <error>}`
+
+### Update password
+##### URL: `/auth/account`
+##### Method `PUT`
+##### Content-Type `application/json`
+Add in the HTTP Header
+##### X-Access-Token `<token>`
+##### Request body
+```
+{
+    "password": <new_password>
+}
+```
+##### Response body
+> status `200`
+
+> status `500` body `{message: <error>}`
+
 
 -----------
 
