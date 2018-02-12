@@ -39,6 +39,7 @@
     success: true,
     exp: '72h', // expiration date
     token: token,
+    len: <contacts count>
 }
 ```
 
