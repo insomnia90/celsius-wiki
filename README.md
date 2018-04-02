@@ -103,13 +103,13 @@ Add in the HTTP Header
         "first": STRING,
         "last": STRING,
         "phone": {
-            "main": STRING,
-            "mobile": STRING,
-            "iphone": STRING,
-            "work": STRING,
-            "home": STRING
+            "main": [STRING] : array of strings,
+            "mobile": [STRING],
+            "iphone": [STRING],
+            "work": [STRING],
+            "home": [STRING]
         },
-        "email":  STRING
+        "email": STRING(valid email format)
     },
     ...
 ]
@@ -132,13 +132,13 @@ Add in the HTTP Header
         "first": STRING,
         "last": STRING,
         "phone": {
-          "main": STRING,
-          "mobile": STRING,
-          "iphone": STRING,
-          "work": STRING,
-          "home": STRING
+            "main": [STRING] : array of strings,
+            "mobile": [STRING],
+            "iphone": [STRING],
+            "work": [STRING],
+            "home": [STRING]
         },
-        "email":  STRING,
+        "email": STRING(valid email format)
     },
     ...
 ]
