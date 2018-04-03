@@ -107,7 +107,8 @@ Add in the HTTP Header
             "mobile": [STRING],
             "iphone": [STRING],
             "work": [STRING],
-            "home": [STRING]
+            "home": [STRING],
+            "other": [STRING]
         },
         "email": STRING(valid email format)
     },
@@ -136,7 +137,8 @@ Add in the HTTP Header
             "mobile": [STRING],
             "iphone": [STRING],
             "work": [STRING],
-            "home": [STRING]
+            "home": [STRING],
+            "other": [STRING]
         },
         "email": STRING(valid email format)
     },
